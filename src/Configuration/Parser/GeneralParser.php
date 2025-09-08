@@ -96,7 +96,6 @@ class GeneralParser extends BaseParser
             'upload_location' => '{contenttype}/{year}/{month}/',
             'maintenance_mode' => false,
             'headers' => [
-                'allow_floc' => false,
                 'powered_by' => true,
             ],
             'htmlcleaner' => [

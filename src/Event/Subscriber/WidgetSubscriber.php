@@ -8,7 +8,6 @@ use Bolt\Canonical;
 use Bolt\Configuration\Config;
 use Bolt\Widget\BoltHeaderWidget;
 use Bolt\Widget\CanonicalLinkWidget;
-use Bolt\Widget\FlocOptOutHeader;
 use Bolt\Widget\Injector\RequestZone;
 use Bolt\Widget\Injector\Target;
 use Bolt\Widget\MaintenanceModeWidget;
@@ -55,10 +54,6 @@ class WidgetSubscriber implements EventSubscriberInterface
         );
 
         $this->widgets->registerWidget($canonicalLinkWidget);
-
-        if (! $this->config->get('general/headers/allow_floc')) {
-            $this->widgets->registerWidget(new FlocOptOutHeader());
-        }
 
         if ($this->config->get('general/headers/powered_by')) {
             $this->widgets->registerWidget(new BoltHeaderWidget());

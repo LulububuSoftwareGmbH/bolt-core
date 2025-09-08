@@ -52,9 +52,6 @@ omit_backgrounds: true
 omit_meta_generator_tag: false
 
 headers:
-    # Allow of Google's FLoC by setting this to `true` (defaults to `false` for opt-out)
-    # https://github.com/symfony/symfony/pull/40989
-    allow-floc: false
     # Add Bolt's "Powered By" (defaults to `true`)
     powered_by: true
 
