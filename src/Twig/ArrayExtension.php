@@ -90,8 +90,7 @@ final class ArrayExtension extends AbstractExtension
      */
     public function length(Environment $env, $thing)
     {
-        $coreExtension = $env->getExtension(CoreExtension::class);
-        return $coreExtension->lengthFilter($env, $this->getArray($thing));
+        return CoreExtension::length($env->getCharset(), $this->getArray($thing));
     }
 
     /**
