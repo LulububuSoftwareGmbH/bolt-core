@@ -19,6 +19,7 @@ use Symfony\Component\Finder\SplFileInfo;
 use Tightenco\Collect\Support\Collection;
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
+use Twig\Extension\CoreExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
@@ -86,7 +87,7 @@ class FieldExtension extends AbstractExtension
             $timezone = $this->config->get('general/timezone', null);
         }
 
-        return twig_date_format_filter($twig, $date, $format, $timezone);
+        return CoreExtension::formatDate($twig, $date, $format, $timezone);
     }
 
     public function fieldFactory(string $name, $definition = null): Field
