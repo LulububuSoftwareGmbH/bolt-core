@@ -87,7 +87,7 @@ class FieldExtension extends AbstractExtension
             $timezone = $this->config->get('general/timezone', null);
         }
 
-        return CoreExtension::formatDate($twig, $date, $format, $timezone);
+        return $twig->getExtension(CoreExtension::class)->formatDate($date, $format, $timezone);
     }
 
     public function fieldFactory(string $name, $definition = null): Field
